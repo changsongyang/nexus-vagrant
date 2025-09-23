@@ -68,14 +68,14 @@ module example.com/go-hello
 go $go_version
 EOF
 cat >Dockerfile <<EOF
-FROM golang:$go_version-bookworm AS builder
+FROM golang:$go_version-trixie AS builder
 WORKDIR /app
 COPY go.* main.go ./
 RUN CGO_ENABLED=0 go build -ldflags="-s"
 
-# NB we use the buster-slim (instead of scratch) image so we
+# NB we use the trixie-slim (instead of scratch) image so we
 #    can enter the container to execute bash etc.
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 COPY --from=builder /app/go-hello .
 WORKDIR /
 EXPOSE 8000

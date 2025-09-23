@@ -541,8 +541,8 @@ EOF
 #    as such, we cannot use our docker-group registry, instead we must use the docker-proxy
 #    registry, enable the Docker Bearer Token Realm and allow anonymous access to it.
 #    see https://github.com/moby/moby/issues/30880
-# NB this will make https://nexus.example.com:5002/v2/library/debian/manifests/buster-slim proxy
-#    to https://registry-1.docker.io/v2/library/debian/manifests/buster-slim
+# NB this will make https://nexus.example.com:5002/v2/library/debian/manifests/trixie-slim proxy
+#    to https://registry-1.docker.io/v2/library/debian/manifests/trixie-slim
 #       https://registry-1.docker.io/v2/library/golang/tags/list
 http \
     --check-status \
